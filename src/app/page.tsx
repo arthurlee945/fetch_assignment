@@ -10,7 +10,6 @@ export default function Home() {
     const {
         authenticatedUser: { authenticated },
     } = useContext(GlobalContext);
-
-    // !authenticated && router.push("/login");
+    !authenticated && router.push("/login");
     return <main> {authenticated ? <MainContent /> : <GeneralErrorMessage message="Please Login to continue" />}</main>;
 }

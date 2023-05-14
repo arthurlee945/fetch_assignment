@@ -16,7 +16,9 @@ import FormLoadingState from "../subComponents/FormParts/FormLoadingState";
 const LogInFormConatiner = styled(m.div)`
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 15px;
+    width: 100%;
     .log-container {
         position: relative;
         display: flex;
@@ -26,6 +28,7 @@ const LogInFormConatiner = styled(m.div)`
         padding: 60px 50px;
         border-radius: 10px;
         min-width: 450px;
+        width: fit-content;
         color: ${colors.black};
         box-shadow: 0px 5px 10px #08080837;
         @media screen and (min-width: ${`${medias.mobile + 1}px`}) and (max-width: ${`${medias.tablet}px`}) {
@@ -33,27 +36,7 @@ const LogInFormConatiner = styled(m.div)`
         @media screen and (max-width: ${`${medias.mobile}px`}) {
             padding: 35px 30px;
             width: 90%;
-        }
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 16px;
-            width: 25px;
-            height: 25px;
-        }
-        .other-action {
-            margin-top: 5px;
-            .co-name {
-                font-weight: 600;
-            }
-            .otherAction-button {
-                color: ${colors.blue};
-                font-weight: 700;
-                &:hover {
-                    text-decoration: underline;
-                    text-decoration-color: ${colors.blue};
-                }
-            }
+            min-width: 280px;
         }
     }
     .log-title {

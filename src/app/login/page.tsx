@@ -1,6 +1,6 @@
 "use client";
 import { FC, useContext } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import styled from "@emotion/styled";
 
 import { GlobalContext } from "@/utils/contexts/GlobalContext";
@@ -11,11 +11,11 @@ const LogInPageContainer = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20vh 0px;
 `;
 interface LogInProps {}
 
 const LogIn: FC<LogInProps> = () => {
-    const router = useRouter();
     const {
         authenticatedUser: { authenticated },
     } = useContext(GlobalContext);
