@@ -2,7 +2,7 @@ import { FC, SyntheticEvent } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { UseFormRegister, FieldValues, UseFormResetField, FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
-import { colors } from "../../styles/style-variables";
+import { colors } from "../../../styles/style-variables";
 import FormErrorMessage from "./FormErrorMessage";
 
 const TextInputContainer = styled.div<{ $colorScheme: "light" | "dark"; $isDirty: boolean; $error: boolean }>`
@@ -76,7 +76,7 @@ const TextInputContainer = styled.div<{ $colorScheme: "light" | "dark"; $isDirty
     }
 `;
 
-interface InputFieldProps {
+interface TextInputProps {
     id: string;
     label: string;
     errors: FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
@@ -87,7 +87,7 @@ interface InputFieldProps {
     colorScheme?: "light" | "dark";
 }
 
-const TextInput: FC<InputFieldProps> = ({ id, isDirty, label, errors, type = "text", colorScheme = "dark", register, resetField }) => {
+const TextInput: FC<TextInputProps> = ({ id, isDirty, label, errors, type = "text", colorScheme = "dark", register, resetField }) => {
     const handleReset = (e: SyntheticEvent) => {
         if ((e.target as HTMLInputElement).value !== "") return;
         resetField(id, { defaultValue: "", keepDirty: false });

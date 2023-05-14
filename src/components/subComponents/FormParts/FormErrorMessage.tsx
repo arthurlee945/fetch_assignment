@@ -3,7 +3,7 @@ import { FC } from "react";
 import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 import styled from "@emotion/styled";
 //-----------------custom
-import { colors } from "../../styles/style-variables";
+import { colors } from "@/styles/style-variables";
 
 const FormErrorMessageContainer = styled.div`
     overflow: hidden;
