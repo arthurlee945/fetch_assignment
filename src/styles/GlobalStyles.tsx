@@ -40,9 +40,6 @@ const globalStyles = css`
         }
     }
     main {
-        padding: 20px 30px;
-        max-width: ${medias.maxDesktop + "px"};
-        margin: 0px auto;
     }
     /*override default scroll bar*/
 

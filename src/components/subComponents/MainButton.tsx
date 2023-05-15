@@ -4,12 +4,12 @@ import { colors, medias } from "@/styles/style-variables";
 
 const MainButtonContainer = styled.button`
     text-align: center;
-    min-width: 120px;
+    min-width: 100px;
     padding: 5px 20px;
     color: ${colors.white};
     background-color: ${colors.black};
     font-weight: 600;
-    border-radius: 2px;
+    border-radius: 5px;
     transition: background-color 300ms;
     &:focus {
         outline: 2px solid ${colors.lightGrey};

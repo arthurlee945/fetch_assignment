@@ -1,8 +1,15 @@
 "use client";
-import axios from "axios";
-import { useEffect } from "react";
-const API_URL = "https://frontend-take-home-service.fetch.com";
+import SearchBar from "@/components/modules/SearchBar";
+import styled from "@emotion/styled";
+
+const HomePageContainer = styled.main`
+    padding: 25px 20px;
+`;
 
 export default function Home() {
-    return <main></main>;
+    return (
+        <HomePageContainer>
+            <SearchBar />
+        </HomePageContainer>
+    );
 }

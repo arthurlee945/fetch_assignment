@@ -50,14 +50,16 @@ const Header: FC<HeaderProps> = () => {
                 <div className="profile-container">
                     {authenticated && user && (
                         <p className="paragraph loggedin-user">
-                            Hi! <span>{user.name || "Unknown"}</span>!
+                            Hi, <span>{user.name || "Unknown"}</span>!
                         </p>
                     )}
                     {!authenticated ? (
-                        <MainLink href="/login">Log in</MainLink>
+                        <MainLink href="/login" ariaLabel="Log in button">
+                            Log In
+                        </MainLink>
                     ) : (
                         <MainButton onClick={handleLogout} ariaLabel="Log out button">
-                            Log out
+                            Log Out
                         </MainButton>
                     )}
                 </div>

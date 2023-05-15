@@ -1,8 +1,6 @@
 "use client";
 import { FC, useContext } from "react";
-// import { useRouter } from "next/navigation";
 import styled from "@emotion/styled";
-
 import { GlobalContext } from "@/utils/contexts/GlobalContext";
 import GeneralErrorMessage from "@/components/modules/GeneralErrorMessage";
 import LogInForm from "@/components/modules/LogInForm";

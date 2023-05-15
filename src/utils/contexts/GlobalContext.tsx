@@ -21,7 +21,7 @@ interface GlobalContextProps {
     logout: () => Promise<string>;
 }
 
-const API_URL = "https://frontend-take-home-service.fetch.com";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://frontend-take-home-service.fetch.com";
 const queryClient = new QueryClient();
 export const GlobalContext = createContext<GlobalContextProps>({
     authenticatedUser: {
@@ -90,6 +90,7 @@ const GlobalContextProvider: FC<GlobalContextProviderProps> = ({ children }) => 
             }
         });
     };
+    const getDogsBreeds = () => {};
     const value = {
         authenticatedUser,
         login,
