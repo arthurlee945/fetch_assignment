@@ -12,10 +12,7 @@ const LogInPageContainer = styled.main`
     padding: 20vh 0px;
 `;
 interface LogInProps {}
-export const metadata = {
-    title: "Fetch Assignment Login Page",
-    description: "Fetch Front End Developer Assignment",
-};
+
 const LogIn: FC<LogInProps> = () => {
     const {
         authenticatedUser: { authenticated },
