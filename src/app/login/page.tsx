@@ -1,7 +1,7 @@
 "use client";
 import { FC, useContext } from "react";
 import styled from "@emotion/styled";
-import { GlobalContext } from "@/utils/contexts/GlobalContext";
+import { GlobalContext } from "@/utils/GlobalContext";
 import GeneralErrorMessage from "@/components/modules/GeneralErrorMessage";
 import LogInForm from "@/components/modules/LogInForm";
 

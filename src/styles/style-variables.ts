@@ -8,6 +8,7 @@ export const colors = {
     amber: "#d30910",
     darkAmber: "#a0181d",
     blue: "#0079d3",
+    darkBlue: "#518ab8",
 };
 
 export const medias = {

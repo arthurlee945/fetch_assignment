@@ -24,7 +24,7 @@ const FetchLogoContainer = styled.div`
     }
 `;
 interface FetchLogoProps {
-    iconSizes?: { width: number; height: number };
+    iconSizes?: { width: number | string; height?: number | string };
 }
 
 const FetchLogo: FC<FetchLogoProps> = ({ iconSizes = { width: 75 } }) => {

@@ -10,7 +10,7 @@ const MainButtonContainer = styled(Link)`
     color: ${colors.white};
     background-color: ${colors.black};
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 3px;
     transition: background-color 300ms;
     &:focus {
         outline: 2px solid ${colors.lightGrey};

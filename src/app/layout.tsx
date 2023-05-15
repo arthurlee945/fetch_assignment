@@ -1,4 +1,4 @@
-import GlobalContextProvider from "@/utils/contexts/GlobalContext";
+import GlobalContextProvider from "@/utils/GlobalContext";
 import Header from "@/components/layouts/Header";
 export const metadata = {
     title: "Fetch Assignment",

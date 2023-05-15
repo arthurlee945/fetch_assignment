@@ -3,7 +3,7 @@ import { FC, useContext } from "react";
 import styled from "@emotion/styled";
 //-------custom--------------
 import { colors, medias } from "@/styles/style-variables";
-import { GlobalContext } from "../../utils/contexts/GlobalContext";
+import { GlobalContext } from "@/utils/GlobalContext";
 import MainButton from "../subComponents/MainButton";
 import MainLink from "../subComponents/MainLink";
 
@@ -44,6 +44,7 @@ const Header: FC<HeaderProps> = () => {
             alert(err);
         }
     };
+
     return (
         <>
             <HeaderComponent>

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { m } from "framer-motion";
 //----------------custom
 import { colors, medias } from "@/styles/style-variables";
-import { GlobalContext } from "@/utils/contexts/GlobalContext";
+import { GlobalContext } from "@/utils/GlobalContext";
 import TextInput from "../subComponents/FormParts/TextInput";
 import SubmitButton from "../subComponents/FormParts/SubmitButton";
 import GlobalFormError from "../subComponents/FormParts/GlobalFormError";

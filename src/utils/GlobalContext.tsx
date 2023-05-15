@@ -23,6 +23,7 @@ interface GlobalContextProps {
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://frontend-take-home-service.fetch.com";
 const queryClient = new QueryClient();
+
 export const GlobalContext = createContext<GlobalContextProps>({
     authenticatedUser: {
         authenticated: false,

@@ -40,6 +40,14 @@ const globalStyles = css`
         }
     }
     main {
+        position: relative;
+        padding: 25px 20px;
+        @media screen and (min-width: ${`${medias.mobile + 1}px`}) and (max-width: ${`${medias.tablet}px`}) {
+        }
+
+        @media screen and (max-width: ${`${medias.mobile}px`}) {
+            padding: 20px 10px;
+        }
     }
     /*override default scroll bar*/
 
