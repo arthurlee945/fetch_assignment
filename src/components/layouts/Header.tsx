@@ -13,7 +13,7 @@ const HeaderComponent = styled.header`
     padding: 7px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     border-bottom: 2px solid ${colors.grey};
     @media screen and (min-width: ${medias.tablet}) {
         &:hover {
@@ -36,11 +36,17 @@ const Header: FC<HeaderProps> = () => {
         authenticatedUser: { authenticated, user },
         logout,
     } = useContext(GlobalContext);
-
+    const handleLogout = async () => {
+        try {
+            const res = await logout();
+            res !== "OK" && alert("Failed on logging out");
+        } catch (err) {
+            alert(err);
+        }
+    };
     return (
         <>
             <HeaderComponent>
-                <div className="info-container"></div>
                 <div className="profile-container">
                     {authenticated && user && (
                         <p className="paragraph loggedin-user">
@@ -50,7 +56,7 @@ const Header: FC<HeaderProps> = () => {
                     {!authenticated ? (
                         <MainLink href="/login">Log in</MainLink>
                     ) : (
-                        <MainButton onClick={logout} ariaLabel="Log out button">
+                        <MainButton onClick={handleLogout} ariaLabel="Log out button">
                             Log out
                         </MainButton>
                     )}

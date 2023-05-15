@@ -3,13 +3,13 @@ import { FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styled from "@emotion/styled";
+import { useRouter } from "next/navigation";
 import { m } from "framer-motion";
 //----------------custom
 import { colors, medias } from "@/styles/style-variables";
 import { GlobalContext } from "@/utils/contexts/GlobalContext";
 import TextInput from "../subComponents/FormParts/TextInput";
 import SubmitButton from "../subComponents/FormParts/SubmitButton";
-import SubmitMessage from "../subComponents/FormParts/SubmitMessage";
 import GlobalFormError from "../subComponents/FormParts/GlobalFormError";
 import FormLoadingState from "../subComponents/FormParts/FormLoadingState";
 
@@ -61,6 +61,7 @@ const logInSchema = z.object({
 interface LogInFormProps {}
 
 const LogInForm: FC<LogInFormProps> = () => {
+    const router = useRouter();
     const { login } = useContext(GlobalContext);
     const [formStates, setFormState] = useState({
         loading: false,
@@ -73,7 +74,7 @@ const LogInForm: FC<LogInFormProps> = () => {
         resetField,
         setFocus,
         setError,
-        formState: { errors, isSubmitSuccessful, dirtyFields },
+        formState: { errors, dirtyFields },
     } = useForm({
         resolver: zodResolver(logInSchema),
     });
@@ -86,12 +87,13 @@ const LogInForm: FC<LogInFormProps> = () => {
             loading: true,
         }));
 
-        //---------------send
+        //---------------send------------
         const { name, email } = data;
         try {
             await login({ name, email });
+            router.push("/");
         } catch (err) {
-            setGlobalFormError("Something");
+            setGlobalFormError(typeof err === "string" ? err : "Something went wrong");
             setError("root.serverError", {
                 type: "400",
             });
@@ -117,32 +119,28 @@ const LogInForm: FC<LogInFormProps> = () => {
                         }}
                     />
                 )}
-                {formStates.submitted && !isSubmitSuccessful ? (
-                    <SubmitMessage />
-                ) : (
-                    <div className="form-container">
-                        <form id="login-form" className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                            <TextInput
-                                id="name"
-                                label="Name"
-                                isDirty={!!dirtyFields.name}
-                                register={register}
-                                resetField={resetField}
-                                errors={errors.name}
-                            />
-                            <TextInput
-                                id="email"
-                                label="Email"
-                                isDirty={!!dirtyFields.email}
-                                register={register}
-                                resetField={resetField}
-                                errors={errors.email}
-                            />
-                            <SubmitButton>Log In</SubmitButton>
-                        </form>
-                        {formStates.loading && <FormLoadingState />}
-                    </div>
-                )}
+                <div className="form-container">
+                    <form id="login-form" className="login-form" onSubmit={handleSubmit(onSubmit)}>
+                        <TextInput
+                            id="name"
+                            label="Name"
+                            isDirty={!!dirtyFields.name}
+                            register={register}
+                            resetField={resetField}
+                            errors={errors.name}
+                        />
+                        <TextInput
+                            id="email"
+                            label="Email"
+                            isDirty={!!dirtyFields.email}
+                            register={register}
+                            resetField={resetField}
+                            errors={errors.email}
+                        />
+                        <SubmitButton>Log In</SubmitButton>
+                    </form>
+                    {formStates.loading && <FormLoadingState />}
+                </div>
             </m.div>
         </LogInFormConatiner>
     );

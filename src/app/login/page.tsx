@@ -14,14 +14,17 @@ const LogInPageContainer = styled.main`
     padding: 20vh 0px;
 `;
 interface LogInProps {}
-
+export const metadata = {
+    title: "Fetch Assignment Login Page",
+    description: "Fetch Front End Developer Assignment",
+};
 const LogIn: FC<LogInProps> = () => {
     const {
         authenticatedUser: { authenticated },
     } = useContext(GlobalContext);
     return (
         <LogInPageContainer>
-            {!authenticated ? <LogInForm /> : <GeneralErrorMessage message="You are already logged in!" />}
+            {!authenticated ? <LogInForm /> : <GeneralErrorMessage message="Thank you for logging in" />}
         </LogInPageContainer>
     );
 };

@@ -39,7 +39,11 @@ const globalStyles = css`
             min-height: calc(100svh - 20px);
         }
     }
-
+    main {
+        padding: 20px 30px;
+        max-width: ${medias.maxDesktop + "px"};
+        margin: 0px auto;
+    }
     /*override default scroll bar*/
 
     body::-webkit-scrollbar {
@@ -87,9 +91,6 @@ const globalStyles = css`
         @media screen and (max-width: ${`${medias.mobile}px`}) {
             font-size: 0.9rem;
         }
-    }
-    .grecaptcha-badge {
-        visibility: hidden;
     }
 `;
 

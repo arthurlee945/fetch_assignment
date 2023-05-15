@@ -1,12 +1,15 @@
 import { FC } from "react";
-import { useRouter } from "next/router";
-import styled from "@emotion/styled";
 
-const MainContentContainer = styled.div``;
+import styled from "@emotion/styled";
+import axios from "axios";
+
+const MainContentContainer = styled.div`
+    border: 1px solid red;
+`;
 interface MainContentProps {}
 
 const MainContent: FC<MainContentProps> = () => {
-    return <MainContentContainer>Floyd</MainContentContainer>;
+    return <MainContentContainer></MainContentContainer>;
 };
 
 export default MainContent;

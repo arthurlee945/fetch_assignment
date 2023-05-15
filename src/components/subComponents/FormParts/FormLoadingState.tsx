@@ -2,11 +2,14 @@ import { FC } from "react";
 import styled from "@emotion/styled";
 
 //------------custom
-// import LoadingIcon from "../LoadingIcon";
+import FetchLogo from "@/styles/icons/Fetch-Icons/FetchLogo";
 import { colors } from "@/styles/style-variables";
 
 const FormLoadingStateContainer = styled.div<{ $colorScheme: "light" | "dark" }>`
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -10px;
     left: -10px;
@@ -27,7 +30,7 @@ interface FormLoadingStateProps {
 const FormLoadingState: FC<FormLoadingStateProps> = ({ colorScheme = "dark" }) => {
     return (
         <FormLoadingStateContainer $colorScheme={colorScheme}>
-            {/* <LoadingIcon iconStyling={{ width: 40, height: 40 }} /> */}
+            <FetchLogo />
         </FormLoadingStateContainer>
     );
 };
