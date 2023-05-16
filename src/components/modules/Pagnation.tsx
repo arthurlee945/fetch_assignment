@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "@emotion/styled";
 import Arrow from "@/styles/icons/arrow.svg";
-import { colors } from "@/styles/style-variables";
+import { colors, medias } from "@/styles/style-variables";
 import PageButton from "../subComponents/PageButton";
 const PaginationContainer = styled.div`
     display: flex;
@@ -11,6 +11,9 @@ const PaginationContainer = styled.div`
     max-width: 1440px;
     margin: 0px auto;
     margin-top: 25px;
+    @media screen and (max-width: ${`${medias.mobile}px`}) {
+        column-gap: 10px;
+    }
     .arrow-btn {
         display: flex;
         align-items: center;
