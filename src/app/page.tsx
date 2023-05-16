@@ -59,7 +59,7 @@ export default function Home() {
                         total: idFetch.data.total,
                     });
                 } catch (err) {
-                    if (err instanceof AxiosError && err.code === "UNAUTHORIZED") {
+                    if (err instanceof AxiosError && err.response?.data === "Unauthorized") {
                         logout();
                     }
                     reject(err);
