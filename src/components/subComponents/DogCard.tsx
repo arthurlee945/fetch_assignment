@@ -21,6 +21,7 @@ const DogCardContainer = styled(m.div)`
         min-width: 225px;
     }
     @media screen and (max-width: ${`${medias.mobile}px`}) {
+        min-width: 225px;
         padding: 10px;
         width: 80%;
     }
