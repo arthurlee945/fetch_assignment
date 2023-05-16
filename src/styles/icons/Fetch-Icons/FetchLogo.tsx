@@ -12,6 +12,10 @@ const FetchLogoContainer = styled.div`
     aspect-ratio: 75/46;
     svg {
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         &.tail {
             transform-origin: 35% 45%;
             animation: tail-wag 500ms ease-in-out infinite;

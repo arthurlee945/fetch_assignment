@@ -91,7 +91,6 @@ const GlobalContextProvider: FC<GlobalContextProviderProps> = ({ children }) => 
             }
         });
     };
-    const getDogsBreeds = () => {};
     const value = {
         authenticatedUser,
         login,
